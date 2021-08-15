@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Shopping Cart</title>
+
+</head>
+<body>
+    <header> 
+        <h1>My Honest Cart</h1>
+    </header>
+z
+    <main>
+        <div class="products">
+            <img id="product-1" src="media/balm.jpg" alt="Balm photo by The Honest Company on Unsplash">
+            <h2>Magic Balm</h2>
+            $<span id="p-1">13</span>.00
+        </div>
+
+        <div class="products"> 
+            <img id="product-2" src="media/lips.jpg" alt="Lip kit photo by The Honest Company on Unsplash">
+            <h2>Red Trio Lips</h2>
+            $<span id="p-2">15</span>.00
+        </div>
+
+        <div class="products">
+            <img id="product-3" src="media/mascara.jpg" alt="Mascara photo by The Honest Company on Unsplash">
+            <h2>Extreme Length Mascara</h2>
+            $<span id="p-3">17</span>.00
+        </div>
+
+        <div class="products">
+            <img id="product-4" src="media/oil.jpg" alt="Oil photo by The Honest Company on Unsplash"> 
+            <h2>Facial Oil</h2>
+            $<span id="p-4">28</span>.00
+        </div>
+
+        <div class="products">
+            <img id="product-5" src="media/cleanser.jpg" alt="Cleanser photo by The Honest Company on Unsplash">
+            <h2>Gel Cleanser</h2>
+            $<span id="p-5">13</span>.00
+        </div>
+
+        <div class="products">
+            <img id="product-6" src="media/skincare.jpg" alt="Skincare photo by The Honest Company on Unsplash">
+            <h2>SkinCare Beauty Bundle</h2>
+            $<span id="p-6">32</span>.00
+        </div>
+
+    </main>
+
+    <section>
+        <div class="remain-box">
+            <div id="remaining-funds">
+                <p><strong>Remaining Funds:</strong> $<span id="remain">0</span>.00</p>
+            </div>
+            <div id="add-funds"> 
+                <span id="money">$</span><input type="text" id="add-input">
+                <button id="fund-btn">Add Funds</button>
+            </div>
+        </div>
+
+        <div class="total" id="margin"> 
+            <p>Cart Total: </p>$<span id="cart-total">0</span>.00
+        </div>
+
+    </section>
+
+    <footer>
+        <h3>Made Honestly &copy;</h3>
+    </footer>
+
+    <script>
+        //Add funds 
+        var funds;
+        var remainFunds = document.querySelector('#remain').innerHTML;
+        remainFunds = parseInt(remainFunds);
+
+        document.querySelector('#fund-btn').onclick = function(){
+            funds = document.querySelector("#add-input").value;
+            funds = parseInt(funds);
+
+            remainFunds = remainFunds + funds;
+
+            document.querySelector ('#remain').innerHTML = remainFunds;
+            document.querySelector('#add-input').value = '';
+        }
+
+        //first product
+        document.querySelector('#product-1').onclick = function(){
+            var cost = document.querySelector('#p-1').innerHTML;
+            cost = parseInt(cost);
+            var total = document.querySelector('#cart-total').innerHTML;
+            total = parseInt(total);
+
+            if(remainFunds >= cost) {
+                total = cost + total;
+                document.querySelector('#cart-total').innerHTML = total;
+
+                remainFunds = remainFunds - cost;
+                document.querySelector('#remain').innerHTML = remainFunds;
+            } else {
+                alert('Insufficient funds, add money.');
+            }
+        };
+
+        //second product
+        document.querySelector('#product-2').onclick = function(){
+            var cost = document.querySelector('#p-2').innerHTML;
+            cost = parseInt(cost);
+            var total = document.querySelector('#cart-total').innerHTML;
+            total = parseInt(total);
+
+            if(remainFunds >= cost) {
+                total = cost + total;
+                document.querySelector('#cart-total').innerHTML = total;
+
+                remainFunds = remainFunds - cost; 
+                document.querySelector('#remain').innerHTML = remainFunds;
+            } else {
+                alert('Insufficient funds, please add some more money!');
+            }
+            
+        };
+        
+        //Third product
+        document.querySelector('#product-3').onclick = function(){
+            var cost = document.querySelector('#p-3').innerHTML;
+            cost = parseInt(cost);
+            var total = document.querySelector('#cart-total').innerHTML;
+            total = parseInt(total);
+
+            if(remainFunds >= cost) {
+                total = cost + total;
+                document.querySelector('#cart-total').innerHTML = total;
+
+                remainFunds = remainFunds - cost; 
+                document.querySelector('#remain').innerHTML = remainFunds
+            } else {
+                alert('Not enough money! Add some more :)');
+            }
+        };
+
+        //Fourth product
+        document.querySelector('#product-4').onclick = function(){
+            var cost = document.querySelector('#p-4').innerHTML;
+            cost = parseInt(cost);
+            var total = document.querySelector('#cart-total').innerHTML;
+            total = parseInt(total);
+
+            if(remainFunds >= cost) {
+                total = cost + total;
+                document.querySelector('#cart-total').innerHTML = total;
+
+                remainFunds = remainFunds - cost; 
+                document.querySelector("#remain").innerHTML = remainFunds
+            } else {
+                alert('No more money, please add some more!')
+            }
+        };
+
+        //Fifth product
+        document.querySelector('#product-5').onclick = function(){
+            var cost = document.querySelector('#p-5').innerHTML;
+            cost = parseInt(cost);
+            var total = document.querySelector('#cart-total').innerHTML;
+            total = parseInt(total);
+
+            if(remainFunds >= cost) {
+                total = cost + total;
+                document.querySelector("#cart-total").innerHTML = total;
+                
+                remainFunds = remainFunds - cost; 
+                document.querySelector('#remain').innerHTML = remainFunds;
+            } else {
+                alert('Time to add some money!')
+            }
+        };
+
+        //Sixth product
+        document.querySelector('#product-6').onclick = function(){
+            var cost = document.querySelector('#p-6').innerHTML;
+            cost = parseInt(cost);
+            var total = document.querySelector('#cart-total').innerHTML;
+            total = parseInt(total);
+
+            if (remainFunds >= cost) {
+                total = cost + total; 
+                document.querySelector('#cart-total').innerHTML = total;
+
+                remainFunds = remainFunds - cost; 
+                document.querySelector('#remain').innerHTML = remainFunds;
+            } else {
+                alert('Dont be shy, add some more!')
+            }
+        };
+    </script>
+    
+</body>
+</html>

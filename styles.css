@@ -1,0 +1,121 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+header h1 {
+    margin: 0px;
+    margin-bottom: 40px;
+    text-align: center;
+    background-color: #f8cdc0;
+    padding: 20px;
+    font-weight: 400;
+    width: 100%;
+}
+
+main {
+    width: 1400px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 1100px){
+    main{
+        width: 1100px;
+    }
+}
+
+@media only screen and (max-width: 835px){
+    section {
+        flex-direction: column;
+        justify-content: center;
+        width: 523px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #remaining-funds {
+        text-align: center;
+    }
+
+    .total {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    main {
+        width: 600px;
+    }
+        
+}
+
+.products h2 {
+    font-weight: 400;
+}
+.products img{
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    margin-top: 50px; 
+}
+
+.products img:hover {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.total {
+    margin: 50px 70px; 
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+    line-height: 20px;
+}
+
+.total p {
+    font-weight: 600;
+}
+
+.remain-box{
+    margin: 50px 70px; 
+    font-size: 1.5rem;
+}
+#remaining-funds {
+    letter-spacing: 1.3px;
+}
+
+#add-funds input {
+    font-size: 1.2rem;
+    padding: 5px;
+}
+#add-funds button{
+    font-size: 1.2rem;
+    padding: 7px;
+    font-family:'Montserrat', sans-serif;
+    background-color: #000;
+    color: #f8cdc0;
+    cursor: pointer;
+}
+
+#money{
+    font-size: 1.2rem;
+    background-color: #f8cdc0;
+    padding: 7px 10px;
+}
+
+footer h3{
+    width: 100%;
+    margin: 0px;
+    margin-top: 80px;
+    text-align: center;
+    background-color: #f8cdc0;
+    padding: 20px;
+    font-weight: 400;
+}
